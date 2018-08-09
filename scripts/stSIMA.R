@@ -57,7 +57,7 @@ stSIMA.default <- function(tabla.horaria, contaminante = "O3", sitio = "Obispado
 }
 
 update.stSIMA <- function(x, tabla.horaria.nueva, modelos.pronostico, check = TRUE){
-  require(data.table)
+  # require(data.table)
   if(!missing(tabla.horaria.nueva)){
     tabla.horaria.nueva.sitio <- tabla.horaria.nueva[tabla.horaria.nueva$sitio == x$sitio, ]
     
@@ -83,9 +83,14 @@ update.stSIMA <- function(x, tabla.horaria.nueva, modelos.pronostico, check = TR
 	if(hora.nueva != 18 | juliano.anterior != juliano.nuevo) stop(paste("En sitio ", x$sitio, mensaje, sep = ""))
       }
     }
-    x$tabla.horaria.sitio <- as.data.frame(rbindlist(list(x$tabla.horaria.sitio, tabla.horaria.nueva.sitio)))
+    # x$tabla.horaria.sitio <- as.data.frame(rbindlist(list(x$tabla.horaria.sitio, tabla.horaria.nueva.sitio)))
+    x$tabla.horaria.sitio <- rbind(x$tabla.horaria.sitio, tabla.horaria.nueva.sitio)
+    
     renglon.nuevo <- renglon.periodo(tabla.horaria.nueva.sitio, contaminante = x$contaminante, pesos = x$pesos)
-    x$tabla.periodos.sitio <- as.data.frame(rbindlist(list(x$tabla.periodos.sitio, renglon.nuevo)))
+    
+    # x$tabla.periodos.sitio <- as.data.frame(rbindlist(list(x$tabla.periodos.sitio, renglon.nuevo)))
+    x$tabla.periodos.sitio <- rbind(x$tabla.periodos.sitio, renglon.nuevo)
+    
   }
   else{
     if(!missing(modelos.pronostico)){
@@ -209,11 +214,11 @@ renglon.periodo <- function(tabla.horaria.sitio, contaminante = "O3", pesos){
 }
 
 tabla.periodos <- function(tabla.horaria.sitio, contaminante = "O3", pesos){
-  require(data.table)
+  # require(data.table)
 # print(sitio)
   lista <- by(tabla.horaria.sitio, list(as.character(tabla.horaria.sitio$juliano.periodo)), renglon.periodo, contaminante = contaminante, pesos = pesos)
-#   tabla <- do.call(rbind, lista)
-  tabla <- as.data.frame(rbindlist(lista))
+  tabla <- do.call(rbind, lista)
+  # tabla <- as.data.frame(rbindlist(lista))
   tabla <- tabla[order(tabla$dia.juliano, tabla$juliano.periodo), ]
   return(tabla)
 }
