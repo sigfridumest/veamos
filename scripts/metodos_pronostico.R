@@ -21,7 +21,7 @@ as.data.frame.pronosticoSIMA <- function(x, ...){
 ###Nuevos metodos: Obispado
 Xreg.ArimaSIMA.O3Obispado <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -84,7 +84,7 @@ Xreg.ArimaSIMA.O3Obispado <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -186,7 +186,7 @@ Xreg.ArimaSIMA.O3Obispado <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.O3Obispado <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -218,7 +218,7 @@ pronostico.ArimaSIMA.O3Obispado <- function(modelo, tabla.periodos, modelos.var.
 
 Xreg.ArimaSIMA.PM10Obispado <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -279,7 +279,7 @@ Xreg.ArimaSIMA.PM10Obispado <- function(modelo, tabla.periodos, modelos.var.met)
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -385,7 +385,7 @@ Xreg.ArimaSIMA.PM10Obispado <- function(modelo, tabla.periodos, modelos.var.met)
 }
 
 pronostico.ArimaSIMA.PM10Obispado <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -415,7 +415,7 @@ pronostico.ArimaSIMA.PM10Obispado <- function(modelo, tabla.periodos, modelos.va
 ###Nuevos metodos: Pastora
 Xreg.ArimaSIMA.O3Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -478,7 +478,7 @@ Xreg.ArimaSIMA.O3Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -573,7 +573,7 @@ Xreg.ArimaSIMA.O3Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.O3Pastora <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -601,7 +601,7 @@ pronostico.ArimaSIMA.O3Pastora <- function(modelo, tabla.periodos, modelos.var.m
 
 Xreg.ArimaSIMA.PM10Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -662,7 +662,7 @@ Xreg.ArimaSIMA.PM10Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -761,7 +761,7 @@ Xreg.ArimaSIMA.PM10Pastora <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.PM10Pastora <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -792,7 +792,7 @@ pronostico.ArimaSIMA.PM10Pastora <- function(modelo, tabla.periodos, modelos.var
 ###Nuevos metodos: Catarina
 Xreg.ArimaSIMA.O3Catarina <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -855,7 +855,7 @@ Xreg.ArimaSIMA.O3Catarina <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -950,7 +950,7 @@ Xreg.ArimaSIMA.O3Catarina <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.O3Catarina <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -978,7 +978,7 @@ pronostico.ArimaSIMA.O3Catarina <- function(modelo, tabla.periodos, modelos.var.
 
 Xreg.ArimaSIMA.PM10Catarina <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -1039,7 +1039,7 @@ Xreg.ArimaSIMA.PM10Catarina <- function(modelo, tabla.periodos, modelos.var.met)
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -1138,7 +1138,7 @@ Xreg.ArimaSIMA.PM10Catarina <- function(modelo, tabla.periodos, modelos.var.met)
 }
 
 pronostico.ArimaSIMA.PM10Catarina <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -1168,7 +1168,7 @@ pronostico.ArimaSIMA.PM10Catarina <- function(modelo, tabla.periodos, modelos.va
 ###Nuevos metodos: Bernabe
 Xreg.ArimaSIMA.O3Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -1231,7 +1231,7 @@ Xreg.ArimaSIMA.O3Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -1326,7 +1326,7 @@ Xreg.ArimaSIMA.O3Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.O3Bernabe <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -1354,7 +1354,7 @@ pronostico.ArimaSIMA.O3Bernabe <- function(modelo, tabla.periodos, modelos.var.m
 
 Xreg.ArimaSIMA.PM10Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -1415,7 +1415,7 @@ Xreg.ArimaSIMA.PM10Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -1514,7 +1514,7 @@ Xreg.ArimaSIMA.PM10Bernabe <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.PM10Bernabe <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -1543,7 +1543,7 @@ pronostico.ArimaSIMA.PM10Bernabe <- function(modelo, tabla.periodos, modelos.var
 ###Nuevos metodos: Nicolas
 Xreg.ArimaSIMA.O3Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -1606,7 +1606,7 @@ Xreg.ArimaSIMA.O3Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -1701,7 +1701,7 @@ Xreg.ArimaSIMA.O3Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.O3Nicolas <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
@@ -1729,7 +1729,7 @@ pronostico.ArimaSIMA.O3Nicolas <- function(modelo, tabla.periodos, modelos.var.m
 
 Xreg.ArimaSIMA.PM10Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 
-  require(tree)
+  
   
   ult.renglon <- tabla.periodos[nrow(tabla.periodos),]
   
@@ -1790,7 +1790,7 @@ Xreg.ArimaSIMA.PM10Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 #    load("R/modelos de pronostico/modelos_pronostico_met_O3_obispado.RData")
    load(modelos.var.met)
    pronostico.univ.met <- function(serie, modelo.arima){
-    require(forecast)
+    
     serie.trans <- modelo.arima$trans(serie)
     nuevo.modelo.obj <- Arima(serie.trans, model = modelo.arima)
     pronostico.trans <- forecast(nuevo.modelo.obj, h = 4)$mean
@@ -1889,7 +1889,7 @@ Xreg.ArimaSIMA.PM10Nicolas <- function(modelo, tabla.periodos, modelos.var.met){
 }
 
 pronostico.ArimaSIMA.PM10Nicolas <- function(modelo, tabla.periodos, modelos.var.met, estimacion = FALSE, ...){
-  require(forecast)
+  
   
   matriz.X <- Xreg(modelo, tabla.periodos, modelos.var.met)$X
   matriz.X.new <- Xreg(modelo, tabla.periodos, modelos.var.met)$X.new
