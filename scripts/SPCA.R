@@ -7,7 +7,7 @@ SPCA.default <- function(entrada, salida){
   SPCA_HOME <- Sys.getenv("SPCA_HOME")
 
   # Or from the current working directory if it isn't set:
-  if(SPCA_HOME == "") SPCA_HOME <- getwd()
+  if(SPCA_HOME == "") SPCA_HOME <- normalizePath(getwd())
 
   # Set the working directory to whatever value SPCA_HOME finally has:
   setwd(SPCA_HOME)
