@@ -59,3 +59,4 @@ corrida_local.R
 tablas.20160430
 *.csv
 air-quality-forecasts.Rproj
+lib/*/
